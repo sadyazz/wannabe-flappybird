@@ -20,7 +20,6 @@ public class birdScript : MonoBehaviour
     //public Sprite[] sprites;
     //private int spriteIndex;
 
-    // Start is called before the first frame update
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<logicScript>();
@@ -32,11 +31,11 @@ public class birdScript : MonoBehaviour
     {
         if ( Input.GetKeyDown(KeyCode.Space)==true && birdIsAlive == true)
         {
-            //myRigidbody.velocity = Vector2.up * flapStrength;
-            flip();
-
-            float directionMultiplier = isFlipped ? -1f : 1f;
-            myRigidbody.velocity = Vector2.up * flapStrength * directionMultiplier;
+            myRigidbody.velocity = Vector2.up * flapStrength;
+            //flip();
+            //
+            //float directionMultiplier = isFlipped ? -1f : 1f;
+            //myRigidbody.velocity = Vector2.up * flapStrength * directionMultiplier;
             
         }
     }
@@ -68,15 +67,4 @@ public class birdScript : MonoBehaviour
         gameStarted = true; 
         birdIsAlive = true; 
     }
-
-    //private void animateSprite()
-    //{
-    //    spriteIndex++;
-    //    if (spriteIndex >= sprites.Length)
-    //    {
-    //        spriteIndex = 0;
-    //    }
-
-    //    spriteRenderer.sprite = sprites[spriteIndex];
-    //}
 }

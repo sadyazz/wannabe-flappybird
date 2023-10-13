@@ -17,20 +17,23 @@ public class pipeSpawnScript : MonoBehaviour
 
     void Start()
     {
-       //InvokeRepeating(nameof(spawnPipe), spawnRate, spawnRate);
-       //InvokeRepeating(nameof(spawnClouds), spawnRate, spawnRate);
+        //InvokeRepeating(nameof(spawnPipe), spawnRate, spawnRate);
+        //InvokeRepeating(nameof(spawnClouds), spawnRate, spawnRate);
+
+        timer = spawnRate;
+        gameStarted = true;
     }
 
     private void OnEnable()
     {
-        InvokeRepeating(nameof(spawnPipe), spawnRate, spawnRate);
-        InvokeRepeating(nameof(spawnClouds), spawnRate, spawnRate);
+        //InvokeRepeating(nameof(spawnPipe), spawnRate, spawnRate);
+        //InvokeRepeating(nameof(spawnClouds), spawnRate, spawnRate);
     }
 
     private void OnDisable()
     {
-        CancelInvoke(nameof(spawnPipe));
-        CancelInvoke(nameof(spawnClouds));
+        //CancelInvoke(nameof(spawnPipe));
+        //CancelInvoke(nameof(spawnClouds));
     }
 
     private void spawnClouds()
@@ -46,22 +49,22 @@ public class pipeSpawnScript : MonoBehaviour
         }
 
     }
-    //void Update()
-    //{
-    //    if (gameStarted)
-    //    {
-    //        if (timer < spawnRate)
-    //        {
-    //            timer += Time.deltaTime;
-    //        }
-    //        else
-    //        {
-    //            timer = 0;
-    //            spawnPipe();
-    //            spawnClouds();
-    //        }
-    //    }
-    //}
+    void Update()
+    {
+        if (gameStarted)
+        {
+            if (timer < spawnRate)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                timer = 0;
+                spawnPipe();
+                spawnClouds();
+            }
+        }
+    }
 
     void spawnPipe()
     {

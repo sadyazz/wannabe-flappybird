@@ -23,6 +23,9 @@ public class logicScript : MonoBehaviour
     public GameObject bird;
     public birdScript birds;
 
+    public pipeMoveSCript pipeMover;
+    private int previousScore = 0;
+
     private void Awake()
     {
         Time.timeScale = 0f;
@@ -56,10 +59,16 @@ public class logicScript : MonoBehaviour
             highScoreText.text = playerScore.ToString();
         }
 
-            if (playerScore % 5 == 0)
-            {
-                birds.DoSomethingAfterEvery30Points();
-            }
+        //if (playerScore % 5 == 0)
+        //{
+        //    birds.DoSomethingAfterEvery30Points();
+        //}
+        if (playerScore > previousScore)
+        {
+            // Increase the speed.
+            pipeMover.PipePassed();
+            previousScore = playerScore;
+        }
     }
 
     //private void flip()
