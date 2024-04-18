@@ -17,7 +17,16 @@ This is my first-ever project, and it's also my first experience with Unity. I c
 - Scoring system.
 - Obstacle generation and movement.
 
-## Future Updates:
+## Short gameplay video
+
+
+
+![flappy gif](https://github.com/sadyazz/wannabe-flappybird/assets/97617659/71b2b141-e4a7-43df-8bac-aa2b9ae2cb0c)
+
+
+
+
+## Future Updates
 While the core features of the game are already in place and it's essentially complete, I have exciting plans to introduce additional features and improvements in the future. This project will continue to evolve, with ongoing enhancements and new elements to make the game even more entertaining.
 
 ## Acknowledgments
